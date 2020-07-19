@@ -1,12 +1,13 @@
 package Animals;
 import Food.*;
+import Exception.FoodException;
 public abstract class Carnivorous extends Animal {
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws FoodException {
         if (food instanceof Meat) {
             System.out.println(name + " ест " + food);
         } else {
-            System.out.println(name + " не ест такую еду");
+            throw new FoodException (name + " не ест такую еду");
         }
     }
 }

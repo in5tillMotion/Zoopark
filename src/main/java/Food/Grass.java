@@ -1,10 +1,8 @@
 package Food;
 
 public class Grass {
-    private String name = "Растения";
-
-    @Override
-    public String getName() {
-        return name;
+    public Bull() {
+        name = "Растения";
     }
 }
+

@@ -2,11 +2,11 @@ package Animals;
 
 import Food.*;
 
-public class Lama extends Herbivore {
+public class Kangaroo extends Herbivore {
 
-    public Lama() {
+    public Kangaroo() {
         count++;
-        name = "Лама №" + count;
+        name = "Кенгуру №" + count;
     }
 
     @Override
@@ -14,5 +14,6 @@ public class Lama extends Herbivore {
         return name;
     }
 
-
 }
+
+

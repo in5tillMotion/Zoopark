@@ -41,7 +41,7 @@ public class AviaryCarnivorous implements Aviary {
         } else if (index < 0) {
             System.out.println("Индекс не может быть меньше нуля");
         } else {
-            System.out.println("Животного с таким идексом нету");
+            System.out.println("Животного с таким идексом нет");
         }
         return null;
     }

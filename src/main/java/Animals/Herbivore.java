@@ -6,7 +6,7 @@ import Food.*;
 public abstract class Herbivore extends Animal {
     @Override
     public void eat(Food food) throws FoodException {
-        if (food instanceof Vegetable) {
+        if (food.isVegetable()) {
             System.out.println(name + " ест " + food);
         } else {
             throw new FoodException (name + " не ест такую еду");

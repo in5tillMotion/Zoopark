@@ -11,7 +11,7 @@ import java.util.List;
 public class Zoo {
     public static void main(String[] args) {
         //Создаём хранилище с едой.
-        Food[] foods = new Food[] {new Bull(), new Grass(), new Pork(), new Wheat()};
+        Food[] foods = Food.values();
 
         //Создаём вольеры и указываем их размеры.
         AviaryCarnivorous aviaryCarnivorous1 = new AviaryCarnivorous(5);

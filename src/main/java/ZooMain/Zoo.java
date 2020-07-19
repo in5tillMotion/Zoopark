@@ -3,13 +3,17 @@ package ZooMain;
 import Animals.*;
 import Food.*;
 import Exception.FoodException;
-import org.w3c.dom.ls.LSOutput;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Zoo {
-    public static void main(String[] args) {
+    public static final Logger log = LogManager.getLogger("output");
+
+    public static void main(String[] args) throws Exception {
         //Создаём хранилище с едой.
         Food[] foods = Food.values();
 
@@ -20,18 +24,19 @@ public class Zoo {
         AviaryHerbivore aviaryHerbivore1 = new AviaryHerbivore(6);
         AviaryHerbivore aviaryHerbivore2 = new AviaryHerbivore(3);
 
-        //Загоняем животных в вольеры.
+        log.info("Заполняем вольер № 1 животными");
         for (int i = 0; i < aviaryCarnivorous1.getSize(); i++) {
             aviaryCarnivorous1.addAnimal(new Tiger());
         }
+        log.info("Заполняем вольер № 2 животными");
         for (int i = 0; i < 2; i++) {
             aviaryCarnivorous2.addAnimal(new Bear());
         }
-
+        log.info("Заполняем вольер № 3 животными");
         for (int i = 0; i < 2; i++) {
             aviaryHerbivore1.addAnimal(new Lama());
         }
-
+        log.info("Заполняем вольер № 4 животными");
         for (int i = 0; i < aviaryHerbivore2.getSize(); i++) {
             aviaryHerbivore2.addAnimal(new Kangaroo());
         }
@@ -43,6 +48,7 @@ public class Zoo {
         aviaries.add(aviaryCarnivorous1);
         aviaries.add(aviaryCarnivorous2);
 
+        log.info("Кормим зверей");
         for (Aviary aviary : aviaries) {
             for (int i = 0; i < aviary.getCount(); i++) {
                 int random = (int) (Math.random() * foods.length);

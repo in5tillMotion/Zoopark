@@ -2,6 +2,7 @@ package ZooMain;
 
 import Animals.*;
 import Food.*;
+import Exception.FoodException;
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.List;
 public class Zoo {
     public static void main(String[] args) {
         //Создаём хранилище с едой.
-        Food[] foods = new Food[] {new Bull(), new Grass(), new Pork(), new Wheat()};
+        Food[] foods = Food.values();
 
         //Создаём вольеры и указываем их размеры.
         AviaryCarnivorous aviaryCarnivorous1 = new AviaryCarnivorous(5);
@@ -49,7 +50,11 @@ public class Zoo {
                 Animal animal = aviary.getAnimalByIndex(i);
                 System.out.println("Работник зоопарка для " + animal + " наложил еды: "
                         + food);
-                animal.eat(food);
+                try {
+                    animal.eat(food);
+                } catch (FoodException e) {
+                    System.out.println(e.getMessage());
+                }
             }
         }
 

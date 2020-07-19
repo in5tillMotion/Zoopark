@@ -1,7 +1,7 @@
 package Food;
 
-public class Grass {
-    public Bull() {
+public class Grass extends Vegetable{
+    public Grass() {
         name = "Растения";
     }
 }

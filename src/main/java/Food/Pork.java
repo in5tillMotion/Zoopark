@@ -1,7 +1,7 @@
 package Food;
 
 public class Pork extends Meat {
-    public Bull() {
+    public Pork() {
         name = "Свинина";
     }
 }

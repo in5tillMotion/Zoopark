@@ -31,7 +31,7 @@ public class AviaryCarnivorous implements Aviary {
             animals.add((Carnivorous) animal);
             count = animals.size();
         } else {
-            System.out.println("В вольере нету места");
+            System.out.println("В вольере нет места");
         }
     }
     @Override

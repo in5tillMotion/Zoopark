@@ -4,8 +4,8 @@ package Food;
 public enum Food {
     BULL("Говядина", false),
     PORK("Свинина", false),
-    GRASS("Трава", false),
-    WHEAT("Пшено", false);
+    GRASS("Трава", true),
+    WHEAT("Пшено", true);
 
     private final String title;
     private final boolean isVegetable;
@@ -15,11 +15,8 @@ public enum Food {
         this.isVegetable = isVegetable;
     }
 
-    public String getTitle() {
+    @Override
+    public String toString() {
         return title;
-    }
-
-    public boolean isVegetable() {
-        return isVegetable;
     }
 }

@@ -1,6 +1,8 @@
 package ZooMain;
+
 import Animals.*;
 import Food.*;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,8 +45,11 @@ public class Zoo {
         for (Aviary aviary : aviaries) {
             for (int i = 0; i < aviary.getCount(); i++) {
                 int random = (int) (Math.random() * foods.length);
+                Food food = foods[random];
                 Animal animal = aviary.getAnimalByIndex(i);
-                animal.eat(foods[random]);
+                System.out.println("Работник зоопарка для " + animal.getName() + " наложил еды: "
+                        + food.getName());
+                animal.eat(food);
             }
         }
 

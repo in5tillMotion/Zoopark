@@ -1,5 +1,9 @@
 package Animals;
+import Food.Food;
+
 //Хищники
 public abstract class Animal {
-    abstract void eat();
+    public abstract void eat(Food food);
+
+    public abstract String getName();
 }
